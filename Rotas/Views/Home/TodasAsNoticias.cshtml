@@ -9,18 +9,18 @@
 
 <div>
     <ul>
-        @foreach (var item in Model)
+        @foreach(var item in Model)
         {
-            <li>
-                @Html.ActionLink(item.Titulo, "MostrarNoticia", "Home", new {
-                  @noticiaId = item.NoticiaId,
-                  @categoria = item.Categoria.ToLower(),
-                  @titulo = item.Titulo.ToLower()
-                }, null);
+           <li>
+               @Html.ActionLink(item.Titulo, "MostrarNoticias", "Home", new {
+                 @noticiaId = item.NoticiaId,
+                 @categoria = item.Categoria.ToLower(),
+                 @titulo = item.Titulo.ToLower()
+               }, null);
 
-                <em> @Html.DisplayFor(modelItem => item.Categoria)</em>
-                <b>  @Html.DisplayFor(modelItem => item.Data)</b>
-            </li>
+               <em> @Html.DisplayFor(modelItem => item.Categoria)</em>
+               <b>  @Html.DisplayFor(modelItem => item.Data)</b>
+           </li>
         }
 
     </ul>
