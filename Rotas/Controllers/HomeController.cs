@@ -24,22 +24,18 @@ namespace Rotas.Controllers
             var todasAsCategorias = todasAsNoticias.Select(x => x.Categoria).Distinct().ToList();
             ViewBag.Categorias = todasAsCategorias;
             return View(ultimasNoticias);
-        }
+        }  
+        
 
-       
-
-        public ActionResult About()
+        public ActionResult TodasAsNoticias()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View(todasAsNoticias);
         }
 
-        public ActionResult Contact()
+        public ActionResult MostrarNoticias(int noticiaId, string titulo, string categoria)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(todasAsNoticias.FirstOrDefault(x => x.NoticiaId == noticiaId));
         }
+
     }
 }
